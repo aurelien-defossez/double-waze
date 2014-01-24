@@ -7,6 +7,9 @@ var canControl : boolean = true;
 
 var useFixedUpdate : boolean = true;
 
+
+var runMultiplicator : float = 2.0;
+
 // For the next variables, @System.NonSerialized tells Unity to not serialize the variable or show it in the inspector view.
 // Very handy for organization!
 
@@ -18,6 +21,7 @@ var inputMoveDirection : Vector3 = Vector3.zero;
 // for the jump button directly so this script can also be used by AIs.
 @System.NonSerialized
 var inputJump : boolean = false;
+var inputRun : boolean = false;
 
 class CharacterMotorMovement {
 	// The maximum horizontal speed when moving
@@ -507,6 +511,7 @@ private function GetDesiredHorizontalVelocity () {
 		// Modify max speed on slopes based on slope speed multiplier curve
 		var movementSlopeAngle = Mathf.Asin(movement.velocity.normalized.y)  * Mathf.Rad2Deg;
 		maxSpeed *= movement.slopeSpeedMultiplier.Evaluate(movementSlopeAngle);
+		if (inputRun) maxSpeed *= runMultiplicator;
 	}
 	return tr.TransformDirection(desiredLocalDirection * maxSpeed);
 }
