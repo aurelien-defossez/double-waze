@@ -157,7 +157,6 @@ GameObject:
   - 33: {fileID: 55546252}
   - 65: {fileID: 55546251}
   - 23: {fileID: 55546250}
-  - 114: {fileID: 55546249}
   m_Layer: 0
   m_Name: hatch
   m_TagString: Untagged
@@ -165,17 +164,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &55546249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 55546248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd7ca9bb43bc8748927e5b3fe95e997, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &55546250
 Renderer:
   m_ObjectHideFlags: 0
@@ -284,7 +272,6 @@ GameObject:
   - 124: {fileID: 304863868}
   - 114: {fileID: 304863867}
   - 81: {fileID: 304863866}
-  - 114: {fileID: 304863871}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -376,17 +363,6 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
   m_OcclusionCulling: 1
---- !u!114 &304863871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 304863864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe5464e1a167e948a5d6edfb93fa684, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &410683209
 GameObject:
   m_ObjectHideFlags: 0
