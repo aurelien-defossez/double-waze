@@ -5396,15 +5396,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 32.5806503
+      value: 27.1206989
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.29673576
+      value: 7.9510498
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -49.7588234
+      value: -38.096859
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5541,7 +5541,7 @@ Transform:
   m_PrefabInternal: {fileID: 374232281}
   m_GameObject: {fileID: 376764626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.5806503, y: 2.29673576, z: -49.7588234}
+  m_LocalPosition: {x: 27.1206989, y: 7.9510498, z: -38.096859}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 823304957}
@@ -11015,6 +11015,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 717032533}
   m_Mesh: {fileID: 4300744, guid: 2ab52f83ab35de34fadc5b2aaf767ff9, type: 3}
+--- !u!1 &720800585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 720800586}
+  m_Layer: 0
+  m_Name: TriggerBigCubeOnRails
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &720800586
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 720800585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1231300528}
 --- !u!1 &722313784
 GameObject:
   m_ObjectHideFlags: 0
@@ -19957,7 +19983,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.49575424, y: -10.099164, z: -4.34581375}
   m_LocalScale: {x: 1, y: 2.52083683, z: 2.48749995}
-  m_Children: []
+  m_Children:
+  - {fileID: 720800586}
   m_Father: {fileID: 625053310}
 --- !u!114 &1231300529
 MonoBehaviour:
