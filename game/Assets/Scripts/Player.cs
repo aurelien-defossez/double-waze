@@ -16,28 +16,25 @@ public class Player : MonoBehaviour
 			RaycastHit hit;
 
 			Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-			//Debug.DrawRay(ray.origin, ray.direction, Color.red);
-
 
 			if (Physics.Raycast (ray.origin, ray.direction,  out hit, 10))
 			{ 
-				if (hit.collider.gameObject != null)
-				{
-					Debug.Log("Object not found");
-				}
-
-				if (hit.collider.gameObject.tag == "DynamicObject")
+				if (hit.collider.gameObject != null && 
+				    hit.collider.gameObject.tag == "DynamicObject")
 				{
 					Debug.Log("DynamicObject found");
 					pickedUpObject = hit.collider.gameObject;
 					pickedUpObject.transform.parent = transform; //attach the object to the camera so it moves along with it.
 					pickedUpObject.transform.position = transform.position + (transform.forward * 1.1f); // put the box far enough not to collide it
+
+					CarryProperties prop = pickedUpObject.GetComponent<CarryProperties>();
+					if (prop != null) prop.touched = true;
+
 				}
 				else
 				{
 					Debug.Log("DynamicObject not found");
 				}
-
 			}
 		}
 		else if (pickedUpObject != null)
