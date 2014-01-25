@@ -23,18 +23,22 @@ public class Trigger : MonoBehaviour
 		
 	}
 		
-	/* Timer, pour l'animation du cube. Déclenche un truc et l'arrete 3s après.
-	 Se lance avec StartCoroutine(AnimateCube(42))*/
+	/* Timer, pour l'animation du cube. Déclenche un truc et l'arrete <disabledAfterSeconds> sec après.
+	 Se lance avec StartCoroutine(AnimateCube())*/
 	IEnumerator AnimateCube()
 	{
 		activated = true;
-		onTrigger (true);
+		if (onTrigger != null) {
+			onTrigger (true);
+		}
 
 		if (disabledAfterSeconds > 0)
 		{
 			yield return new WaitForSeconds(disabledAfterSeconds);
 			activated = false;
-			onTrigger (false);
+			if (onTrigger != null) {
+				onTrigger (false);
+			}
 		}
 	}
 
