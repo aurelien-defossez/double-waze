@@ -5,18 +5,17 @@ public class ValveTrigger : MonoBehaviour {
 	const float rotationSpeed = 45f;
 
 	private bool pushed = false;
-	private GameObject valve;
 
 	// Use this for initialization
 	void Start () {
-		valve = GameObject.Find ("Valve");
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (pushed) {
-			valve.transform.RotateAround (
-				valve.transform.position,
+			gameObject.transform.RotateAround (
+				gameObject.transform.position,
 				Vector3.back,
 				rotationSpeed * Time.deltaTime
 			);
