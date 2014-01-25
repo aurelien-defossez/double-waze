@@ -3,6 +3,9 @@ using System.Collections;
 
 public class LeverScript : MonoBehaviour {
 	private bool activated = false;
+	
+	public delegate void LeverActivated(bool active);
+	public static event LeverActivated OnLeverActivated;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +22,7 @@ public class LeverScript : MonoBehaviour {
 			if (!gameObject.animation.isPlaying) {
 				activated = !activated;
 				gameObject.animation.Play(activated ? "activate" : "deactivate");
+				OnLeverActivated(activated);
 			}
 		}
 	}
