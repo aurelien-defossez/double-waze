@@ -5,7 +5,7 @@ public class LeverScript : MonoBehaviour {
 	private bool activated = false;
 	
 	public delegate void LeverActivated(bool active);
-	public static event LeverActivated OnLeverActivated;
+	private event LeverActivated OnLeverActivated;
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +15,10 @@ public class LeverScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void AddEventListener(LeverActivated listener) {
+		OnLeverActivated += listener;
 	}
 	
 	void OnTriggerStay(Collider other) {

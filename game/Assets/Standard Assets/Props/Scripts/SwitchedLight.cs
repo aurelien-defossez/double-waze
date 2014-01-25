@@ -7,7 +7,6 @@ public class SwitchedLight : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		LeverScript.OnLeverActivated += OnLeverActivated;
 		OnLeverActivated(false);
 	}
 	
@@ -16,7 +15,7 @@ public class SwitchedLight : MonoBehaviour {
 	
 	}
 
-	void OnLeverActivated(bool active) {
+	public void OnLeverActivated(bool active) {
 		gameObject.light.color = active ? GREEN : RED;
 	}
 }
