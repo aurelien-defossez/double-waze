@@ -5639,15 +5639,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 32.3733292
+      value: 29.0420551
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.9510498
+      value: 7.68917751
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -48.5589714
+      value: -40.518837
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5714,7 +5714,7 @@ Transform:
   m_PrefabInternal: {fileID: 374232281}
   m_GameObject: {fileID: 376764626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.1206989, y: 7.9510498, z: -38.096859}
+  m_LocalPosition: {x: 29.0420551, y: 7.68917751, z: -40.518837}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 823304957}
@@ -11636,6 +11636,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 720800586}
+  - 65: {fileID: 720800587}
   m_Layer: 0
   m_Name: TriggerBigCubeOnRails
   m_TagString: Untagged
@@ -11651,9 +11652,21 @@ Transform:
   m_GameObject: {fileID: 720800585}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.82500005, y: 1, z: 1.28750062}
   m_Children: []
   m_Father: {fileID: 1231300528}
+--- !u!65 &720800587
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 720800585}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &722313784
 GameObject:
   m_ObjectHideFlags: 0
@@ -19537,6 +19550,45 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1146275996}
   m_Mesh: {fileID: 4300448, guid: 2ab52f83ab35de34fadc5b2aaf767ff9, type: 3}
+--- !u!1 &1146491926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1146491927}
+  - 65: {fileID: 1146491928}
+  m_Layer: 0
+  m_Name: TriggerMediumCubeOnRails
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1146491927
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1146491926}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.90265882, y: 1, z: 1.38604498}
+  m_Children: []
+  m_Father: {fileID: 1235010760}
+--- !u!65 &1146491928
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1146491926}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1148325138
 GameObject:
   m_ObjectHideFlags: 0
@@ -21306,7 +21358,8 @@ Transform:
   m_LocalRotation: {x: 0, y: .243728772, z: 0, w: .969843507}
   m_LocalPosition: {x: -9.69227982, y: -10.4624367, z: -8.27594757}
   m_LocalScale: {x: 1, y: 1.7385534, z: 2.48749995}
-  m_Children: []
+  m_Children:
+  - {fileID: 1146491927}
   m_Father: {fileID: 625053310}
 --- !u!23 &1235010761
 Renderer:
@@ -28677,7 +28730,8 @@ Transform:
   m_LocalRotation: {x: 0, y: .503122032, z: 0, w: .864215434}
   m_LocalPosition: {x: -4.57087135, y: -10.8146906, z: -12.1563492}
   m_LocalScale: {x: 1, y: 1, z: 2.48749995}
-  m_Children: []
+  m_Children:
+  - {fileID: 1844532370}
   m_Father: {fileID: 625053310}
 --- !u!23 &1674829507
 Renderer:
@@ -32139,6 +32193,45 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1842128660}
   m_Mesh: {fileID: 4300698, guid: 2ab52f83ab35de34fadc5b2aaf767ff9, type: 3}
+--- !u!1 &1844532369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1844532370}
+  - 65: {fileID: 1844532371}
+  m_Layer: 0
+  m_Name: TriggerSmallCubeOnRails
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1844532370
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1844532369}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.78567731, y: 1, z: 1.41075587}
+  m_Children: []
+  m_Father: {fileID: 1674829506}
+--- !u!65 &1844532371
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1844532369}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1845815107
 GameObject:
   m_ObjectHideFlags: 0
