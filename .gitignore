@@ -6,3 +6,6 @@
 *.csproj
 *.unityproj
 *.sln
+ggj.sublime-project
+ggj.sublime-workspace
+game/game.userprefs
