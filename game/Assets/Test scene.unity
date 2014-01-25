@@ -2359,8 +2359,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canControl: 1
   useFixedUpdate: 1
-  runMultiplicator: 2
-  inputRun: 0
   movement:
     maxForwardSpeed: 6
     maxSidewaysSpeed: 6
