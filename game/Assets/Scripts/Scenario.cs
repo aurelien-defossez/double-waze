@@ -5,24 +5,6 @@ public class Scenario : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		LeverScript leverScript;
-		SwitchedLight switchedLight;
-		LightScript lightScript;
-		PressureTrigger pressureTrigger;
-		PlatformScript platformScript;
-
-		/*
-		// Bind lever1 to light1
-		leverScript = (LeverScript) GameObject.Find("lever1").GetComponent(typeof(LeverScript));
-		switchedLight = (SwitchedLight) GameObject.Find("light1").GetComponent(typeof(SwitchedLight));
-		leverScript.AddEventListener(switchedLight.OnLeverActivated);
-		
-		// Bind lever2 to light2
-		leverScript = (LeverScript) GameObject.Find("lever2").GetComponent(typeof(LeverScript));
-		switchedLight = (SwitchedLight) GameObject.Find("light2").GetComponent(typeof(SwitchedLight));
-		leverScript.AddEventListener(switchedLight.OnLeverActivated);
-		*/
-
 		// Bind "PlaqueMonteCharge" to "MonteCharge"
 		GetPlatformScript("MonteCharge").Init(new Vector3(0, 4.7f, 0), 1.0f);
 		GetPressureTrigger("PlaqueMonteCharge").AddEventListener(GetPlatformScript("MonteCharge").OnPressureActivated);
