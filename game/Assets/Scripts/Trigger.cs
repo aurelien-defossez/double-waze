@@ -3,32 +3,46 @@ using System.Collections;
 
 public class Trigger : MonoBehaviour
 {
-	bool activated = false;
+	// Used to subscribe to the trigger. Do trigger += function to be notified when the object is triggered
+	public delegate void trigger(bool on); 
+
+	public float disabledAfterSeconds = 3;
+	public bool debugRotation = true;
+
+	private bool activated = false;
+	public event trigger onTrigger;
 	
+
 	void OnTriggerStay(Collider other)
 	{
 		if (Input.GetButtonUp("Action"))
 		{
 			Debug.Log ("Hello");
-			StartCoroutine(AnimateCube(3));
+			StartCoroutine(AnimateCube());
 		}
 		
 	}
 		
 	/* Timer, pour l'animation du cube. Déclenche un truc et l'arrete 3s après.
 	 Se lance avec StartCoroutine(AnimateCube(42))*/
-	IEnumerator AnimateCube(int duration)
+	IEnumerator AnimateCube()
 	{
 		activated = true;
-		yield return new WaitForSeconds(duration);
-		activated = false;
+		onTrigger (true);
+
+		if (disabledAfterSeconds > 0)
+		{
+			yield return new WaitForSeconds(disabledAfterSeconds);
+			activated = false;
+			onTrigger (false);
+		}
 	}
-	
+
 	void Update()
 	{
-		if (activated)
+		if (activated && debugRotation)
 		{
-			transform.RotateAround(Vector3.zero, Vector3.up, 20 * Time.deltaTime);
+			transform.RotateAround(transform.position, Vector3.up, 20 * Time.deltaTime);
 		}
 	}
 }

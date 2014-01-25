@@ -8,6 +8,9 @@ public class SchyzoLoader : MonoBehaviour
 	void Start ()
 	{
 		Component[] children = this.GetComponentsInChildren<Renderer> ();
+
+		if (children.Length <= 1) return; // To avoid errors and stuff when there are no 2 versions of the object
+
 		foreach (Component comp in children)
 		{
 			if (GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().world == World.Real)
