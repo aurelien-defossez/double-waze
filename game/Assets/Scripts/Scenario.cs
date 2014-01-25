@@ -32,6 +32,16 @@ public class Scenario : MonoBehaviour {
 		leverScript = (LeverScript) GameObject.Find("InterrupteurLumiereGlobale").GetComponent(typeof(LeverScript));
 		lightScript = (LightScript) GameObject.Find("LumiereGlobale").GetComponent(typeof(LightScript));
 		leverScript.AddEventListener(lightScript.OnLeverActivated);
+		
+		// Bind "InterrupteurLumiere1-1" to "Lumiere1-1"
+		leverScript = (LeverScript) GameObject.Find("InterrupteurLumiere1-1").GetComponent(typeof(LeverScript));
+		lightScript = (LightScript) GameObject.Find("Lumiere1-1").GetComponent(typeof(LightScript));
+		leverScript.AddEventListener(lightScript.OnLeverActivated);
+		
+		// Bind "InterrupteurLumiere1-2" to "Lumiere1-2"
+		leverScript = (LeverScript) GameObject.Find("InterrupteurLumiere1-2").GetComponent(typeof(LeverScript));
+		lightScript = (LightScript) GameObject.Find("Lumiere1-2").GetComponent(typeof(LightScript));
+		leverScript.AddEventListener(lightScript.OnLeverActivated);
 	}
 	
 	// Update is called once per frame
