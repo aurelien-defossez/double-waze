@@ -6,9 +6,10 @@ public class Reveal : MonoBehaviour {
 	//bool on = false;
 	float lightCountdown = 0;
 	float maxCountdown = 0.5f;
-
+	Component[] boxes;
 	// Use this for initialization
 	void Start () {
+		boxes = GetComponentsInChildren<CarryProperties>();
 		EnableLights(false);
 	}
 	
@@ -32,9 +33,20 @@ public class Reveal : MonoBehaviour {
 	}
 
 	void EnableLights(bool state) {
+		
 		Component[] spotlights = GetComponentsInChildren<Light>();
 		foreach (Light light in spotlights) {
 			light.enabled = state;
+		}
+
+		Debug.Log ("enable lights:" + state );
+
+
+		foreach (CarryProperties box in boxes) {
+			Debug.Log ("box visible:" + (state || box.touched));
+
+			// If the box has been touched, it stays visible
+			box.gameObject.SetActive(state || box.touched);
 		}
 	}
 }
