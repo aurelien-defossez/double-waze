@@ -5,7 +5,7 @@ public class LeverScript : MonoBehaviour {
 	private bool activated = false;
 	
 	public delegate void LeverActivated(bool active);
-	private event LeverActivated OnLeverActivated;
+	private event LeverActivated OnLeverActivated = delegate{};
 
 	// Use this for initialization
 	void Start () {
