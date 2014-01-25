@@ -24,28 +24,36 @@ public class Scenario : MonoBehaviour {
 		*/
 
 		// Bind "PlaqueMonteCharge" to "MonteCharge"
-		pressureTrigger = (PressureTrigger) GameObject.Find("PlaqueMonteCharge").GetComponent(typeof(PressureTrigger));
-		platformScript = (PlatformScript) GameObject.Find("MonteCharge").GetComponent(typeof(PlatformScript));
-		pressureTrigger.AddEventListener(platformScript.OnPressureActivated);
+		GetPressureTrigger("PlaqueMonteCharge").AddEventListener(GetPlatformScript("MonteCharge").OnPressureActivated);
 
 		// Bind "InterrupteurLumiereGlobale" to "LumiereGlobale"
-		leverScript = (LeverScript) GameObject.Find("InterrupteurLumiereGlobale").GetComponent(typeof(LeverScript));
-		lightScript = (LightScript) GameObject.Find("LumiereGlobale").GetComponent(typeof(LightScript));
-		leverScript.AddEventListener(lightScript.OnLeverActivated);
-		
+		GetLeverScript("InterrupteurLumiereGlobale").AddEventListener(GetLightScript("LumiereGlobale").OnLeverActivated);
+
 		// Bind "InterrupteurLumiere1-1" to "Lumiere1-1"
-		leverScript = (LeverScript) GameObject.Find("InterrupteurLumiere1-1").GetComponent(typeof(LeverScript));
-		lightScript = (LightScript) GameObject.Find("Lumiere1-1").GetComponent(typeof(LightScript));
-		leverScript.AddEventListener(lightScript.OnLeverActivated);
+		GetLeverScript("InterrupteurLumiere1-1").AddEventListener(GetLightScript("Lumiere1-1").OnLeverActivated);
 		
 		// Bind "InterrupteurLumiere1-2" to "Lumiere1-2"
-		leverScript = (LeverScript) GameObject.Find("InterrupteurLumiere1-2").GetComponent(typeof(LeverScript));
-		lightScript = (LightScript) GameObject.Find("Lumiere1-2").GetComponent(typeof(LightScript));
-		leverScript.AddEventListener(lightScript.OnLeverActivated);
+		GetLeverScript("InterrupteurLumiere1-2").AddEventListener(GetLightScript("Lumiere1-2").OnLeverActivated);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+	
+	PressureTrigger GetPressureTrigger(string name) {
+		return  (PressureTrigger) GameObject.Find(name).GetComponent(typeof(PressureTrigger));
+	}
+	
+	PlatformScript GetPlatformScript(string name) {
+		return  (PlatformScript) GameObject.Find(name).GetComponent(typeof(PlatformScript));
+	}
+	
+	LeverScript GetLeverScript(string name) {
+		return  (LeverScript) GameObject.Find(name).GetComponent(typeof(LeverScript));
+	}
+	
+	LightScript GetLightScript(string name) {
+		return  (LightScript) GameObject.Find(name).GetComponent(typeof(LightScript));
 	}
 }
