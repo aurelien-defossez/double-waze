@@ -7,6 +7,7 @@ public class Scenario : MonoBehaviour {
 	void Start () {
 		LeverScript leverScript;
 		SwitchedLight switchedLight;
+		LightScript lightScript;
 		PressureTrigger pressureTrigger;
 		PlatformScript platformScript;
 
@@ -26,6 +27,11 @@ public class Scenario : MonoBehaviour {
 		pressureTrigger = (PressureTrigger) GameObject.Find("PlaqueMonteCharge").GetComponent(typeof(PressureTrigger));
 		platformScript = (PlatformScript) GameObject.Find("MonteCharge").GetComponent(typeof(PlatformScript));
 		pressureTrigger.AddEventListener(platformScript.OnPressureActivated);
+
+		// Bind "InterrupteurLumiereGlobale" to "LumiereGlobale"
+		leverScript = (LeverScript) GameObject.Find("InterrupteurLumiereGlobale").GetComponent(typeof(LeverScript));
+		lightScript = (LightScript) GameObject.Find("LumiereGlobale").GetComponent(typeof(LightScript));
+		leverScript.AddEventListener(lightScript.OnLeverActivated);
 	}
 	
 	// Update is called once per frame
