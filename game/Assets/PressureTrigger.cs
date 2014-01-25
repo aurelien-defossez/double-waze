@@ -6,6 +6,8 @@ public class PressureTrigger : MonoBehaviour {
 	public delegate void PressureActivated(bool active);
 	public static event PressureActivated OnPressureActivated = delegate{};
 
+	public int colliderCount = 0;
+
 	// Use this for initialization
 	void Start () {
 
@@ -21,7 +23,11 @@ public class PressureTrigger : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other) {
-		Activate(true);
+		if (colliderCount == 0) {
+			Activate(true);
+		}
+
+		colliderCount ++;
 	}
 	
 	void OnTriggerStay(Collider other) {
@@ -29,7 +35,11 @@ public class PressureTrigger : MonoBehaviour {
 	}
 	
 	void OnTriggerExit(Collider other) {
-		Activate(false);
+		colliderCount --;
+
+		if (colliderCount == 0) {
+			Activate(false);
+		}
 	}
 
 	void Activate(bool active) {
