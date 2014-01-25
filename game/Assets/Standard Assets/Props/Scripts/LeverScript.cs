@@ -27,6 +27,8 @@ public class LeverScript : MonoBehaviour {
 				activated = !activated;
 				gameObject.animation.Play(activated ? "activate" : "deactivate");
 				OnLeverActivated(activated);
+				audio.volume = 0.02f;
+				audio.Play();
 			}
 		}
 	}
