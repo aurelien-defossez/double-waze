@@ -5,6 +5,5 @@ using System.Collections;
 public class Player : MonoBehaviour
 {
 	public World world = World.Real;
-
 }
 

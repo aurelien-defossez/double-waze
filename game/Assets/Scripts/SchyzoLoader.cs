@@ -10,7 +10,7 @@ public class SchyzoLoader : MonoBehaviour
 		Component[] children = this.GetComponentsInChildren<Renderer> ();
 		foreach (Component comp in children)
 		{
-			if (GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().world == World.Real)
+			if (GameObject.Find("WorldManager").GetComponent<WorldManager>().world == World.Real)
 			{
 				comp.renderer.enabled = (comp.name == "Real Mesh");
 			} 
