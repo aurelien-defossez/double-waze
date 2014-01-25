@@ -2,13 +2,17 @@
 using System.Collections;
 
 public class PlatformScript : MonoBehaviour {
-	private Vector3 translation = new Vector3(0, 4.7f, 0);
-	private float duration = 1.0f;
-
-	private bool activated = false;
+	private float duration;
 	private float timer;
+	private Vector3 translation;
 	private Vector3 origin;
 	private Vector3 target;
+	private bool activated = false;
+	
+	public void Init(Vector3 translation, float duration) {
+		this.translation = translation;
+		this.duration = duration;
+	}
 
 	// Use this for initialization
 	void Start () {
