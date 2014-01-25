@@ -4,20 +4,22 @@ using System.Collections;
 public class Trigger : MonoBehaviour
 {
 	bool activated = false;
+	public int duration = 3;
+	public delegate void callback();
 	
 	void OnTriggerStay(Collider other)
 	{
 		if (Input.GetButtonUp("Action"))
 		{
 			Debug.Log ("Hello");
-			StartCoroutine(AnimateCube(3));
+			StartCoroutine(AnimateCube());
 		}
 		
 	}
 		
 	/* Timer, pour l'animation du cube. Déclenche un truc et l'arrete 3s après.
 	 Se lance avec StartCoroutine(AnimateCube(42))*/
-	IEnumerator AnimateCube(int duration)
+	IEnumerator AnimateCube()
 	{
 		activated = true;
 		yield return new WaitForSeconds(duration);
