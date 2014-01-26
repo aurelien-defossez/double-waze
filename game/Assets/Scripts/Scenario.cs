@@ -32,6 +32,7 @@ public class Scenario : MonoBehaviour {
 		GetButtonTrigger("Bouton3").Init(3.0f);
 		GetPlatformScript("Escalier3").Init(new Vector3(2.0f, 0, 0), 1.0f);
 		GetButtonTrigger("Bouton3").AddEventListener(GetPlatformScript("Escalier3").OnButtonActivated);
+
 	}
 	
 	// Update is called once per frame
@@ -58,4 +59,10 @@ public class Scenario : MonoBehaviour {
 	ButtonTrigger GetButtonTrigger(string name) {
 		return  (ButtonTrigger) GameObject.Find(name).GetComponent(typeof(ButtonTrigger));
 	}
+
+
+    keyScript GetKeyScript(string name)
+    {
+        return (keyScript)GameObject.Find(name).GetComponent(typeof(keyScript));
+    }
 }
