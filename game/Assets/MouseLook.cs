@@ -35,7 +35,6 @@ public class MouseLook : MonoBehaviour {
 
 	void Update ()
 	{
-        Debug.Log(Input.GetAxis(mousex));
 
 		if (axes == RotationAxes.MouseXAndY)
 		{
