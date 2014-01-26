@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Reveal : MonoBehaviour {
 	float lightCountdown = 0;
-	float maxCountdown = 0.5f;
+	public float maxCountdown = 0.5f;
 	Component[] boxes;
 	// Use this for initialization
 	void Start () {
