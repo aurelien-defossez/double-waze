@@ -7,6 +7,7 @@ public var jump : String;
 public var run : String;
 
 function Awake () {
+    Debug.Log(gameObject.GetComponent("CharacterMotor"));
     motor = gameObject.GetComponent("CharacterMotor");
 }
 
