@@ -17,7 +17,6 @@ public class Trigger : MonoBehaviour
 	{
 		if (Input.GetButtonUp("Action"))
 		{
-			Debug.Log ("Hello");
 			StartCoroutine(AnimateCube());
 		}
 		
