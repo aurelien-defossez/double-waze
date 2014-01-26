@@ -47,5 +47,10 @@ public class Ladder : MonoBehaviour {
 		}
 	}
 
+	public void deploy(bool bleh) {
+		GetComponent<Animation> ().Play ();
+		gameObject.GetComponent<BoxCollider> ().enabled = true;
+	}
+
 
 }
