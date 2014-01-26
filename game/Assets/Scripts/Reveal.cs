@@ -2,14 +2,12 @@
 using System.Collections;
 
 public class Reveal : MonoBehaviour {
-
-	//bool on = false;
 	float lightCountdown = 0;
 	float maxCountdown = 0.5f;
 	Component[] boxes;
 	// Use this for initialization
 	void Start () {
-		boxes = GetComponentsInChildren<CarryProperties>();
+		boxes = GetComponentsInChildren<Component>();
 		EnableLights(false);
 	}
 	
@@ -33,20 +31,13 @@ public class Reveal : MonoBehaviour {
 	}
 
 	void EnableLights(bool state) {
-		
-		Component[] spotlights = GetComponentsInChildren<Light>();
-		foreach (Light light in spotlights) {
-			light.enabled = state;
-		}
-
-		Debug.Log ("enable lights:" + state );
-
-
-		foreach (CarryProperties box in boxes) {
-			Debug.Log ("box visible:" + (state || box.touched));
-
-			// If the box has been touched, it stays visible
-			box.gameObject.SetActive(state || box.touched);
+		foreach (Component box in boxes) {
+			if (box is CarryProperties) {
+				// If the box has been touched, it stays visible
+				box.gameObject.SetActive(state || (box as CarryProperties).touched);
+			} else {
+				box.gameObject.SetActive(state);
+			}
 		}
 	}
 }
