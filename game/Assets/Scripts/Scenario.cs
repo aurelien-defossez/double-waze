@@ -5,25 +5,8 @@ public class Scenario : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		LeverScript leverScript;
-		SwitchedLight switchedLight;
-		LightScript lightScript;
-		PressureTrigger pressureTrigger;
-		PlatformScript platformScript;
-
-		/*
-		// Bind lever1 to light1
-		leverScript = (LeverScript) GameObject.Find("lever1").GetComponent(typeof(LeverScript));
-		switchedLight = (SwitchedLight) GameObject.Find("light1").GetComponent(typeof(SwitchedLight));
-		leverScript.AddEventListener(switchedLight.OnLeverActivated);
-		
-		// Bind lever2 to light2
-		leverScript = (LeverScript) GameObject.Find("lever2").GetComponent(typeof(LeverScript));
-		switchedLight = (SwitchedLight) GameObject.Find("light2").GetComponent(typeof(SwitchedLight));
-		leverScript.AddEventListener(switchedLight.OnLeverActivated);
-		*/
-
 		// Bind "PlaqueMonteCharge" to "MonteCharge"
+		GetPlatformScript("MonteCharge").Init(new Vector3(0, 4.7f, 0), 1.0f);
 		GetPressureTrigger("PlaqueMonteCharge").AddEventListener(GetPlatformScript("MonteCharge").OnPressureActivated);
 
 		// Bind "InterrupteurLumiereGlobale" to "LumiereGlobale"
@@ -34,6 +17,23 @@ public class Scenario : MonoBehaviour {
 		
 		// Bind "InterrupteurLumiere1-2" to "Lumiere1-2"
 		GetLeverScript("InterrupteurLumiere1-2").AddEventListener(GetLightScript("Lumiere1-2").OnLeverActivated);
+
+		/*
+		// Bind "Bouton1" to "Escalier1"
+		GetButtonTrigger("Bouton1").Init(3.0f);
+		GetPlatformScript("Escalier1").Init(new Vector3(2.0f, 0, 0), 1.0f);
+		GetButtonTrigger("Bouton1").AddEventListener(GetPlatformScript("Escalier1").OnButtonActivated);
+		
+		// Bind "Bouton2" to "Escalier2"
+		GetButtonTrigger("Bouton2").Init(3.0f);
+		GetPlatformScript("Escalier2").Init(new Vector3(2.0f, 0, 0), 1.0f);
+		GetButtonTrigger("Bouton2").AddEventListener(GetPlatformScript("Escalier2").OnButtonActivated);
+
+		// Bind "Bouton3" to "Escalier3"
+		GetButtonTrigger("Bouton3").Init(3.0f);
+		GetPlatformScript("Escalier3").Init(new Vector3(2.0f, 0, 0), 1.0f);
+		GetButtonTrigger("Bouton3").AddEventListener(GetPlatformScript("Escalier3").OnButtonActivated);
+		*/
 	}
 	
 	// Update is called once per frame
@@ -56,4 +56,14 @@ public class Scenario : MonoBehaviour {
 	LightScript GetLightScript(string name) {
 		return  (LightScript) GameObject.Find(name).GetComponent(typeof(LightScript));
 	}
+	
+	ButtonTrigger GetButtonTrigger(string name) {
+		return  (ButtonTrigger) GameObject.Find(name).GetComponent(typeof(ButtonTrigger));
+	}
+
+
+    keyScript GetKeyScript(string name)
+    {
+        return (keyScript)GameObject.Find(name).GetComponent(typeof(keyScript));
+    }
 }

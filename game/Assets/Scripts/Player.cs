@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 				if (hit.collider.gameObject != null && 
 				    hit.collider.gameObject.tag == "DynamicObject")
 				{
-					Debug.Log("DynamicObject found");
+					//Debug.Log("DynamicObject found");
 					pickedUpObject = hit.collider.gameObject;
 					pickedUpObject.transform.parent = transform; //attach the object to the camera so it moves along with it.
 					pickedUpObject.transform.position = transform.position + (transform.forward * 1.1f); // put the box far enough not to collide it
@@ -30,10 +30,6 @@ public class Player : MonoBehaviour
 					CarryProperties prop = pickedUpObject.GetComponent<CarryProperties>();
 					if (prop != null) prop.touched = true;
 
-				}
-				else
-				{
-					Debug.Log("DynamicObject not found");
 				}
 			}
 		}

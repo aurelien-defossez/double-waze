@@ -14,7 +14,6 @@ public class LightScript : MonoBehaviour {
 	}
 	
 	public void OnLeverActivated(bool active) {
-		print ("onLeverActivated " + active);
 		gameObject.light.enabled = active;
 	}
 }
