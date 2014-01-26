@@ -12721,7 +12721,6 @@ GameObject:
   - 33: {fileID: 1107165952}
   - 65: {fileID: 1107165951}
   - 23: {fileID: 1107165950}
-  - 54: {fileID: 1107165948}
   - 65: {fileID: 1107165949}
   - 114: {fileID: 1107165954}
   m_Layer: 0
@@ -12731,22 +12730,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1107165948
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5400000, guid: 6cadfb79124e49e48a7175b80b916daa,
-    type: 2}
-  m_PrefabInternal: {fileID: 1877960592}
-  m_GameObject: {fileID: 1107165947}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1107165949
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12758,7 +12741,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 10, z: 1}
+  m_Size: {x: .5, y: 10, z: .5}
   m_Center: {x: 0, y: 5, z: 0}
 --- !u!23 &1107165950
 Renderer:
@@ -12826,6 +12809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70c2911f6ecc4fa4a8ea9a9a9b8f2d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderCount: 0
 --- !u!1 &1117731370
 GameObject:
   m_ObjectHideFlags: 0
@@ -14050,6 +14034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f530c5142a1783d40874b9ff001f13f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1 &1232051054
 GameObject:
   m_ObjectHideFlags: 0
@@ -14247,6 +14232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11198c1f040306e489a1d7dc42901ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1 &1238062175
 GameObject:
   m_ObjectHideFlags: 0
@@ -20097,6 +20083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8adbc629ed32e84b8a517cd175a82d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1 &1678098932
 GameObject:
   m_ObjectHideFlags: 0
