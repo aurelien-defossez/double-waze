@@ -1,7 +1,7 @@
 public class CubeOnRails {
 	public var rails: Vector3 [];
 	public var currentRails: Vector3;
-	var currentRailsIndex: int = -1;
+	var currentRailsIndex: int = 0;
 	public var speed: int = 100;
 	public var gameObject: GameObject;
 	
