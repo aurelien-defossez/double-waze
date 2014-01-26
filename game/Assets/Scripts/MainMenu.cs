@@ -6,6 +6,8 @@ public class MainMenu : MonoBehaviour {
 	public Texture backgroundTexture;
 	public float playButtonY = Screen.height * .5f;
 
+	public AudioClip buttonSound;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -22,6 +24,7 @@ public class MainMenu : MonoBehaviour {
 		if (GUI.Button (new Rect (
 			Screen.width * .25f, playButtonY, 
 			Screen.width * .5f, Screen.height * .1f), "Play Game")) {
+			yield return new WaitForSeconds(1);
 			Application.LoadLevel(1);
 		}
 	}
