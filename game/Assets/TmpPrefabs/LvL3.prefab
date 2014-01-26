@@ -42,6 +42,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   - 108: {fileID: 10800000}
+  - 136: {fileID: 13600002}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -91,6 +93,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 400010}
   - 108: {fileID: 10800002}
+  - 136: {fileID: 13600010}
+  - 114: {fileID: 11400012}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -183,6 +187,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 400020}
   - 108: {fileID: 10800004}
+  - 136: {fileID: 13600006}
+  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -286,6 +292,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 400032}
   - 108: {fileID: 10800006}
+  - 136: {fileID: 13600008}
+  - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -321,6 +329,7 @@ GameObject:
   - 4: {fileID: 400036}
   - 108: {fileID: 10800008}
   - 136: {fileID: 13600000}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: TriggerableSpotlight
   m_TagString: Untagged
@@ -337,6 +346,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 400038}
   - 108: {fileID: 10800010}
+  - 136: {fileID: 13600004}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -370,6 +381,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400042}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: LvL3
   m_TagString: Untagged
@@ -1381,6 +1393,102 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f7da097bf400d408dac1def2a543ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disappearsForSeconds: 1
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3f461d3373d5142baca71e75e5e645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabledAfterSeconds: 1
+  debugRotation: 0
+  type: 1
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3f461d3373d5142baca71e75e5e645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabledAfterSeconds: 1
+  debugRotation: 0
+  type: 1
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3f461d3373d5142baca71e75e5e645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabledAfterSeconds: 1
+  debugRotation: 0
+  type: 1
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3f461d3373d5142baca71e75e5e645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabledAfterSeconds: 1
+  debugRotation: 0
+  type: 1
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3f461d3373d5142baca71e75e5e645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabledAfterSeconds: 1
+  debugRotation: 0
+  type: 1
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3f461d3373d5142baca71e75e5e645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabledAfterSeconds: 1
+  debugRotation: 0
+  type: 1
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1394,6 +1502,71 @@ CapsuleCollider:
   m_Height: 5
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 5.5}
+--- !u!136 &13600002
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: .75
+  m_Height: 5
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 6}
+--- !u!136 &13600004
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100038}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: .75
+  m_Height: 5
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 4}
+--- !u!136 &13600006
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: .75
+  m_Height: 5
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 6}
+--- !u!136 &13600008
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100032}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: .649999976
+  m_Height: 5
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 5}
+--- !u!136 &13600010
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: .75
+  m_Height: 5
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 4}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

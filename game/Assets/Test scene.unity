@@ -1371,6 +1371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disabledAfterSeconds: 0
   debugRotation: 0
+  type: 0
 --- !u!114 &259714394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2253,6 +2254,7 @@ GameObject:
   - 95: {fileID: 440868990}
   - 114: {fileID: 440868989}
   - 65: {fileID: 440868988}
+  - 111: {fileID: 440868991}
   m_Layer: 0
   m_Name: Bonne echelle
   m_TagString: Untagged
@@ -2283,7 +2285,7 @@ BoxCollider:
   m_GameObject: {fileID: 440868986}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 5, z: 1}
   m_Center: {x: 0, y: 2, z: -.5}
@@ -2318,6 +2320,21 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!111 &440868991
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 440868986}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 89d7297c294636b479388a6f0b1548e9, type: 3}
+  m_Animations:
+  - {fileID: 7400000, guid: 89d7297c294636b479388a6f0b1548e9, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &464233178
 Prefab:
   m_ObjectHideFlags: 0
@@ -2542,6 +2559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disabledAfterSeconds: 3
   debugRotation: 1
+  type: 0
 --- !u!114 &507814693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4671,6 +4689,10 @@ Prefab:
       propertyPath: deployed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: 46dae936be4080342a0f8cf97f911f74, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46dae936be4080342a0f8cf97f911f74, type: 2}
   m_RootGameObject: {fileID: 440868986}
@@ -6065,6 +6087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac79b53e4ff9164989a975f06b8aa42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxCountdown: .5
 --- !u!1 &1449753261
 GameObject:
   m_ObjectHideFlags: 0
@@ -8805,8 +8828,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b3f461d3373d5142baca71e75e5e645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disabledAfterSeconds: 3
-  debugRotation: 1
+  disabledAfterSeconds: 0
+  debugRotation: 0
+  type: 0
 --- !u!114 &1964043998
 MonoBehaviour:
   m_ObjectHideFlags: 0
