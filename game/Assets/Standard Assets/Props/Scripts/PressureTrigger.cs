@@ -2,24 +2,17 @@
 using System.Collections;
 
 public class PressureTrigger : MonoBehaviour {
-	
-	public delegate void PressureActivated(bool active);
-	public static event PressureActivated OnPressureActivated = delegate{};
+	public GameObject target;
 
-	public int colliderCount = 0;
+	private int colliderCount = 0;
 
 	// Use this for initialization
 	void Start () {
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-	}
-	
-	public void AddEventListener(PressureActivated listener) {
-		OnPressureActivated += listener;
 	}
 	
 	void OnTriggerEnter(Collider other) {
@@ -43,6 +36,6 @@ public class PressureTrigger : MonoBehaviour {
 	}
 
 	void Activate(bool active) {
-		OnPressureActivated(active);
+		target.GetComponent<PlatformScript>().OnPressureActivated(active);
 	}
 }

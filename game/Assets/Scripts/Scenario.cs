@@ -5,8 +5,8 @@ public class Scenario : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		/*
 		// Bind "PlaqueMonteCharge" to "MonteCharge"
-		GetPlatformScript("MonteCharge").Init(new Vector3(0, 4.7f, 0), 1.0f);
 		GetPressureTrigger("PlaqueMonteCharge").AddEventListener(GetPlatformScript("MonteCharge").OnPressureActivated);
 
 		// Bind "InterrupteurLumiereGlobale" to "LumiereGlobale"

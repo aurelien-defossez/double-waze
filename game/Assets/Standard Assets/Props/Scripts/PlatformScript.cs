@@ -2,34 +2,19 @@
 using System.Collections;
 
 public class PlatformScript : MonoBehaviour {
-	private float duration;
+	public float duration;
+	public Vector3 translation;
+
 	private float timer;
-	private Vector3 translation;
 	private Vector3 origin;
 	private Vector3 target;
-	private bool initialized = false;
-	private bool started = false;
 	private bool activated = false;
-	
-	public void Init(Vector3 translation, float duration) {
-		this.translation = translation;
-		this.duration = duration;
-		initialized = true;
-		CheckInit();
-	}
 
 	// Use this for initialization
 	void Start () {
-		started = true;
-		CheckInit();
-	}
-
-	void CheckInit() {
-		if (initialized && started) {
-			origin = gameObject.transform.position;
-			target = origin + translation;
-			timer = duration;
-		}
+		origin = gameObject.transform.position;
+		target = origin + translation;
+		timer = duration;
 	}
 
 	// Update is called once per frame
