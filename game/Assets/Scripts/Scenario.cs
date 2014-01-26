@@ -17,7 +17,8 @@ public class Scenario : MonoBehaviour {
 		
 		// Bind "InterrupteurLumiere1-2" to "Lumiere1-2"
 		GetLeverScript("InterrupteurLumiere1-2").AddEventListener(GetLightScript("Lumiere1-2").OnLeverActivated);
-		
+
+		/*
 		// Bind "Bouton1" to "Escalier1"
 		GetButtonTrigger("Bouton1").Init(3.0f);
 		GetPlatformScript("Escalier1").Init(new Vector3(2.0f, 0, 0), 1.0f);
@@ -32,7 +33,7 @@ public class Scenario : MonoBehaviour {
 		GetButtonTrigger("Bouton3").Init(3.0f);
 		GetPlatformScript("Escalier3").Init(new Vector3(2.0f, 0, 0), 1.0f);
 		GetButtonTrigger("Bouton3").AddEventListener(GetPlatformScript("Escalier3").OnButtonActivated);
-
+		*/
 	}
 	
 	// Update is called once per frame
