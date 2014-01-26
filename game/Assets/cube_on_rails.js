@@ -1,7 +1,7 @@
 public class CubeOnRails {
 	public var rails: Vector3 [];
 	public var currentRails: Vector3;
-	var currentRailsIndex: int = 0;
+	var currentRailsIndex: int = -1;
 	public var speed: int = 100;
 	public var gameObject: GameObject;
 	
@@ -12,6 +12,9 @@ public class CubeOnRails {
 	
 	public function move() {
 		Debug.Log("move");
+		Debug.Log(gameObject.name);
 		gameObject.transform.position += speed * currentRails;
+		Debug.Log(speed);
+		Debug.Log(speed * currentRails);
 	}
 }

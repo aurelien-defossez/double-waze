@@ -5681,6 +5681,10 @@ Prefab:
       propertyPath: sensitivityX
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
   m_RootGameObject: {fileID: 376764626}
@@ -5702,7 +5706,7 @@ GameObject:
   - 114: {fileID: 376764633}
   m_Layer: 0
   m_Name: First Person Controller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11637,6 +11641,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 720800586}
   - 65: {fileID: 720800587}
+  - 114: {fileID: 720800588}
   m_Layer: 0
   m_Name: TriggerBigCubeOnRails
   m_TagString: Untagged
@@ -11652,7 +11657,7 @@ Transform:
   m_GameObject: {fileID: 720800585}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.82500005, y: 1, z: 1.28750062}
+  m_LocalScale: {x: 3.28692579, y: 1.19999981, z: 2.14047027}
   m_Children: []
   m_Father: {fileID: 1231300528}
 --- !u!65 &720800587
@@ -11667,6 +11672,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &720800588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 720800585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f530c5142a1783d40874b9ff001f13f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &722313784
 GameObject:
   m_ObjectHideFlags: 0
@@ -21143,7 +21159,6 @@ GameObject:
   - 33: {fileID: 1231300527}
   - 65: {fileID: 1231300526}
   - 23: {fileID: 1231300525}
-  - 114: {fileID: 1231300529}
   m_Layer: 0
   m_Name: Marche1
   m_TagString: Untagged
@@ -21203,17 +21218,6 @@ Transform:
   m_Children:
   - {fileID: 720800586}
   m_Father: {fileID: 625053310}
---- !u!114 &1231300529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1231300524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f530c5142a1783d40874b9ff001f13f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1232051054
 GameObject:
   m_ObjectHideFlags: 0
