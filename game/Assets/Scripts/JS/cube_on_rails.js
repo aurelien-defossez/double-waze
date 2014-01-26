@@ -28,11 +28,8 @@ public class CubeOnRails {
 	}
 	
 	public function move() {
-		Debug.Log(currentRail);
-		Debug.Log(gameObject.transform.parent.position);
 		isMoving = true;
 		var direction_vector: Vector3 = currentDestination - gameObject.transform.parent.position;
-		Debug.Log(direction_vector);
 		gameObject.transform.parent.position += (direction_vector)*speed;
 	}
 }
