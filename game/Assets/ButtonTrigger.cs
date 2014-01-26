@@ -33,13 +33,17 @@ public class ButtonTrigger : MonoBehaviour {
 	public void AddEventListener(ButtonActivated listener) {
 		OnButtonActivated += listener;
 	}
-	
-	void OnTriggerStay(Collider other) {
-		if (Input.GetButton("Action")) {
-			if (timer >= duration) {
-				timer = 0.0f;
-				OnButtonActivated(true);
-			}
-		}
-	}
+
+    void OnTriggerStay(Collider other)
+    {
+        if (Input.GetButton("Action"))
+        {
+            if (timer >= duration)
+            {
+                timer = 0.0f;
+                OnButtonActivated(true);
+                Debug.Log("Button triggered");
+            }
+        }
+    }
 }
