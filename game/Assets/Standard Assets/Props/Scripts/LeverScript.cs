@@ -2,10 +2,9 @@
 using System.Collections;
 
 public class LeverScript : MonoBehaviour {
+	public GameObject target;
+
 	private bool activated = false;
-	
-	public delegate void LeverActivated(bool active);
-	private event LeverActivated OnLeverActivated = delegate{};
 
 	// Use this for initialization
 	void Start () {
@@ -16,19 +15,16 @@ public class LeverScript : MonoBehaviour {
 	void Update () {
 		
 	}
-
-	public void AddEventListener(LeverActivated listener) {
-		OnLeverActivated += listener;
-	}
 	
 	void OnTriggerStay(Collider other) {
 		if (Input.GetButton("Action")) {
 			if (!gameObject.animation.isPlaying) {
 				activated = !activated;
 				gameObject.animation.Play(activated ? "activate" : "deactivate");
-				OnLeverActivated(activated);
 				audio.volume = 0.02f;
 				audio.Play();
+
+				target.GetComponent<LightScript>().OnLeverActivated(active);
 			}
 		}
 	}

@@ -31,10 +31,6 @@ public class Player : MonoBehaviour
 					if (prop != null) prop.touched = true;
 
 				}
-				else
-				{
-					Debug.Log("DynamicObject not found");
-				}
 			}
 		}
 		else if (pickedUpObject != null)
