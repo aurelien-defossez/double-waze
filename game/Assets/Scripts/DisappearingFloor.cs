@@ -8,6 +8,8 @@ public class DisappearingFloor : MonoBehaviour {
 	private GameObject floor;
 	private GameObject lights;
 
+	private bool lightsOn = false;
+
 	// Use this for initialization
 	void Start () {
 		floor = transform.Find ("Sol").gameObject;
@@ -15,6 +17,17 @@ public class DisappearingFloor : MonoBehaviour {
 
 		foreach (Trigger t in lights.GetComponentsInChildren<Trigger>()) {
 			t.onTrigger += disableFloor;
+		}
+
+
+		transform.Find ("Interrupteurs").GetComponentInChildren<Trigger> ().onTrigger += enableLights;
+	}
+
+	void enableLights(bool enable) {
+		lightsOn = !lightsOn;
+		Debug.Log ("Enable lights");
+		foreach (Light l in lights.GetComponentsInChildren<Light>()) {
+			l.enabled = lightsOn;
 		}
 	}
 	
