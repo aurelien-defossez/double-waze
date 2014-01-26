@@ -4,11 +4,16 @@ using System.Collections;
 public class Reveal : MonoBehaviour {
 	float lightCountdown = 0;
 	public float maxCountdown = 0.5f;
-	Component[] boxes;
+	public Component[] boxes;
 	// Use this for initialization
 	void Start () {
-		boxes = GetComponentsInChildren<Component>();
+		RefreshBoxes ();
 		EnableLights(false);
+	}
+
+	public void RefreshBoxes() {
+		Debug.Log("Refreshing Boxes");
+		boxes = GetComponentsInChildren<Component>();
 	}
 	
 	// Update is called once per frame
@@ -31,6 +36,9 @@ public class Reveal : MonoBehaviour {
 	}
 
 	void EnableLights(bool state) {
+		if (boxes == null) {
+			return;
+		}
 		foreach (Component box in boxes) {
 			if (box is CarryProperties) {
 				// If the box has been touched, it stays visible

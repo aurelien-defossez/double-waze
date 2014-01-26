@@ -8,7 +8,7 @@ public class ReflectableLight : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		revealedObject = transform.Find ("RevealedObject").gameObject;
+
 	}
 	
 	// Update is called once per frame
@@ -18,6 +18,13 @@ public class ReflectableLight : MonoBehaviour {
 
 	void OnTriggerStay(Collider other)
 	{
-		revealedObject.GetComponent<Reveal>().activate(true);
+		Transform blorg = transform.Find ("RevealedObject");
+		if (blorg != null && blorg.gameObject != null) {
+			revealedObject = blorg.gameObject;
+			Reveal results = revealedObject.GetComponent<Reveal> ();
+			if (results != null) {
+				results.activate(true);
+			}
+		}
 	}
 }

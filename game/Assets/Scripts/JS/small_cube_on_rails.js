@@ -3,6 +3,8 @@
 private var SmallCubeOnRails: CubeOnRails;
 private var OnActivate: function () = function () {} ;
 public var speed: float = 1;
+public var nextParents: GameObject[];
+
 function Activate() {
 	//Debug.Log("Triggering event funtion");
 	if (Input.GetButtonUp("Action")) {
@@ -30,7 +32,15 @@ function Update () {
 	(OnActivate as Function)();
 	if (SmallCubeOnRails.isMoving) {
 		if (Vector3.Distance(SmallCubeOnRails.currentDestination, gameObject.transform.parent.position) <= 0.004) {
+			// End of move, change parent
 			SmallCubeOnRails.isMoving = false;
+			var formerParent: GameObject = this.transform.parent.parent.gameObject;
+			(formerParent.GetComponent("Reveal") as Reveal).boxes = null;
+			var newParent: GameObject = nextParents[SmallCubeOnRails.currentRailsIndex];
+			this.transform.parent.parent = newParent.transform;
+			var revObj: Reveal = (newParent.gameObject.GetComponent("Reveal") as Reveal);
+			Debug.Log(Reveal);
+			revObj.RefreshBoxes();
 		} else {
 			SmallCubeOnRails.move();
 		}
