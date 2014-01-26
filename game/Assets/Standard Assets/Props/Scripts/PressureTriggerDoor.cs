@@ -36,7 +36,7 @@ public class PressureTriggerDoor : MonoBehaviour {
 	}
 	
 	void Activate(bool active) {
-		Debug.Log ("Activé");
+		//Debug.Log ("Activé");
 		target.GetComponent<DoorScript>().OnPressureActivated(active);
 	}
 }
