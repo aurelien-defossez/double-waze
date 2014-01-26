@@ -2,46 +2,44 @@
 
 private var BigCubeOnRails: CubeOnRails;
 private var OnActivate: function () = function () {} ;
-
+public var speed: float = 1;
 function Activate() {
 	//Debug.Log("Triggering event funtion");
-	if (Input.GetButton("Action")) {
-		Debug.Log("Action on Big Button!");
+	if (Input.GetButtonUp("Action")) {
+		BigCubeOnRails.nextRail();
 		BigCubeOnRails.move();
 	}
 }
 
 function Start () {
-	var rails: Vector3[] = [Vector3.right, Vector3.left, Vector3.right];
+	var rails: Vector3[] = [Vector3(5.4849798, 0, 0)];
 	BigCubeOnRails = CubeOnRails();
 	BigCubeOnRails.rails = rails;
-	BigCubeOnRails.nextRail();
+	BigCubeOnRails.speed = speed;
 }
 
 function Update () {
-
+	if (BigCubeOnRails.IsFinished()) {
+		return;
+	};
+	(OnActivate as Function)();
+	if (BigCubeOnRails.isMoving) {
+		if (Vector3.Distance(BigCubeOnRails.currentDestination, gameObject.transform.parent.position) <= 0.004) {
+			BigCubeOnRails.isMoving = false;
+		} else {
+			BigCubeOnRails.move();
+		}
+	}
 }
 
 function OnTriggerEnter(collider: Collider) {
-	Debug.Log("OnTriggerEnter on BigCube");
-	Debug.Log("Adding function to event trigger");
+	BigCubeOnRails.gameObject = gameObject;
 	if (collider.tag == "Player") {
 		OnActivate = Activate;
-	} else {
-		Debug.Log("This was not the player.");
 	}
 }
 function OnTriggerExit(collider: Collider) {
-	Debug.Log("OnTriggerExit on BigCube");
 	if (collider.tag == "Player") {
-		Debug.Log("Removing function from event trigger");
 		OnActivate = function () {};
-	} else {
-		Debug.Log("This was not the player.");
 	}
-}
-
-function OnGUI() {
-	BigCubeOnRails.gameObject = gameObject;
-	(OnActivate as Function)();
 }
