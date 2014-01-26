@@ -2,21 +2,15 @@
 using System.Collections;
 
 public class ButtonTrigger : MonoBehaviour {
-	
-	public delegate void ButtonActivated(bool active);
-	private event ButtonActivated OnButtonActivated = delegate{};
+	public GameObject target1;
+	public GameObject target2;
+	public float duration;
 
-	private float duration;
 	private float timer = 0.0f;
-
-	public void Init(float duration) {
-		this.duration = duration;
-		timer = duration;
-	}
 
 	// Use this for initialization
 	void Start () {
-	
+		timer = duration;
 	}
 	
 	// Update is called once per frame
@@ -25,13 +19,9 @@ public class ButtonTrigger : MonoBehaviour {
 			timer += Time.deltaTime;
 
 			if (timer >= duration) {
-				OnButtonActivated(false);
+				Activate(false);
 			}
 		}
-	}
-	
-	public void AddEventListener(ButtonActivated listener) {
-		OnButtonActivated += listener;
 	}
 
     void OnTriggerStay(Collider other)
@@ -41,9 +31,13 @@ public class ButtonTrigger : MonoBehaviour {
             if (timer >= duration)
             {
                 timer = 0.0f;
-                OnButtonActivated(true);
-                Debug.Log("Button triggered");
+				Activate(true);
             }
         }
-    }
+	}
+	
+	void Activate(bool active) {
+		target1.GetComponent<PlatformScript>().OnButtonActivated(active);
+		target2.GetComponent<PlatformScript>().OnButtonActivated(active);
+	}
 }
