@@ -3,22 +3,30 @@ using System.Collections;
 
 public class Trigger : MonoBehaviour
 {
+	public enum TriggerType{Action, Presence};
 	// Used to subscribe to the trigger. Do trigger += function to be notified when the object is triggered
 	public delegate void trigger(bool on); 
 
 	public float disabledAfterSeconds = 3;
 	public bool debugRotation = true;
+	public TriggerType type = TriggerType.Action;
 
 	private bool activated = false;
 	public event trigger onTrigger;
-	
+
+
 
 	void OnTriggerStay(Collider other)
 	{
-		if (Input.GetButtonUp("Action"))
-		{
-			StartCoroutine(AnimateCube());
+		switch(type) {
+		case TriggerType.Action:
+			if (! Input.GetButtonUp ("Action")) return;
+			break;
+		default: 
+			break; // always allow
 		}
+
+		StartCoroutine (AnimateCube ());
 		
 	}
 		
